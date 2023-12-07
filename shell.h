@@ -24,25 +24,25 @@
 #define MAX_TOKENS 1024
 
 /* built-in funcs */
-int check_for_builtin(char **args)
-int shell_env(void)
-void shell_exit(char **args)
-void shell_help(void)
+int check_for_builtin(char **args);
+int shell_env(void);
+void shell_exit(char **args);
+void shell_help(void);
 
 /* get_line.c*/
 void *get_line(void);
 
 /* get_path.c */
 char *get_path(void);
-char *find_in_path(char *command)
+char *find_in_path(char *command);
 
 /* get_env.c */
 char *_getenv(const char *name);
 
 /* error.c */
-void _eputs(char *str)
-int _eputchar(char c)
-int _putfd(char c, int fd)
-int _putsfd(char *str, int fd)
+void _eputs(char *str);
+int _eputchar(char c);
+int _putfd(char c, int fd);
+int _putsfd(char *str, int fd);
 
 #endif

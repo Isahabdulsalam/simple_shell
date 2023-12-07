@@ -1,4 +1,6 @@
 #include "shell.h"
+#include <unistd.h>
+#include <stdio.h>
 
 /**
  * shell_env - Prints all the environment variables

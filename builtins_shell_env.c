@@ -12,7 +12,7 @@ int shell_env(void)
 
 	for (i = 0; environ[i]; i++)
 	{
-	_puts(environ[i]);
+	_eputs(environ[i]);
 	}
 
 return (0);

@@ -13,7 +13,7 @@ void shell_exit(char **args)
 
 	if (args[1] != NULL)
 	{
-	status = _atoi(args[1]);
+	status = atoi(args[1]);
 	}
 
 free_tokens(args);

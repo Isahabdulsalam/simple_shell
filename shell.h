@@ -25,9 +25,14 @@
 
 /* built-in funcs */
 int check_for_builtin(char **args);
-int shell_env(void);
-void shell_exit(char **args);
+int execute_buitlin(char *cmd, char **args);
 void shell_help(void);
+void shell_exit(char **args);
+void shell_cd(char **args);
+int shell_setenv(char **args);
+int shell_unsetenv(char **args);
+int shell_env(void);
+int shell_clear(char **args);
 
 /* get_line.c*/
 char *get_line(void);

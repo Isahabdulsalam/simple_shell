@@ -45,4 +45,17 @@ int _eputchar(char c);
 int _putfd(char c, int fd);
 int _putsfd(char *str, int fd);
 
+/* parser.c */
+char **tokenize(char *str, const char *delim);
+char **tokenize_input(char *input);
+
+/* free.c */
+void free_error(char **argv, char *arg);
+void free_tokens(char **ptr);
+void free_path(void);
+
+/* get_input.c */
+char *get_input(void);
+void free_last_input(void);
+
 #endif

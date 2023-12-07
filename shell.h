@@ -30,7 +30,7 @@ void shell_exit(char **args);
 void shell_help(void);
 
 /* get_line.c*/
-void *get_line(void);
+char *get_line(void);
 
 /* get_path.c */
 char *get_path(void);

@@ -42,7 +42,7 @@ char *get_path(void);
 char *find_in_path(char *command);
 
 /* get_env.c */
-char *_getenv(char **envp, const char *name);
+char *_getenv(const char *name);
 
 /* error.c */
 void _eputs(char *str);

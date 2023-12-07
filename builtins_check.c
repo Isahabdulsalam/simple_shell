@@ -1,3 +1,5 @@
+#include "shell.h"
+
 /**
  * check_for_builtin - checks if the command is a builtin
  * @args: the arguments array

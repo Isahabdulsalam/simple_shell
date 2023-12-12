@@ -1,5 +1,7 @@
 #include "shell.h"
 
+void free_last_input(void);
+
 /**
  * shell_exit - Exit the shell.
  * @args: Arguments.

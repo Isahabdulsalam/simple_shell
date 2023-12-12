@@ -61,6 +61,5 @@ void free_path(void);
 
 /* get_input.c */
 char *get_input(void);
-void free_last_input(void);
 
 #endif

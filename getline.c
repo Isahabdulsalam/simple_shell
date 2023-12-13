@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 #define BUFFER_SIZE 1024
 
@@ -34,4 +35,17 @@ char *get_line(void)
 	}
 
 	return (buffer);
+}
+
+/**
+ * sigintHandler - blocks ctrl-C
+ * @sig_num: the signal number
+ *
+ * Return: void
+ */
+void sigintHandler(__attribute__((unused))int sig_num)
+{
+	_eputs("\n");
+	_eputs("$ ");
+	_eputchar(BUF_FLUSH);
 }

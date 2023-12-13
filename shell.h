@@ -36,6 +36,7 @@ int shell_clear(char **args);
 
 /* get_line.c*/
 char *get_line(void);
+void sigintHandler(__attribute__((unused))int sig_num);
 
 /* get_path.c */
 char *get_path(void);

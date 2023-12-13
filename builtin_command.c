@@ -11,19 +11,19 @@ void shell_cd(char **args)
 
     if (dir == NULL || strcmp(dir, "~") == 0)
     {
-        dir = _getenv("HOME");
+        dir = getenv("HOME");
         if (dir == NULL)
         {
-            _eputs("cd: No HOME directory found\n");
+            fputs("cd: No HOME directory found\n", stderr);
             return;
         }
     }
     else if (strcmp(dir, "-") == 0)
     {
-        dir = _getenv("OLDPWD");
+        dir = getenv("OLDPWD");
         if (dir == NULL)
         {
-            _eputs("cd: OLDPWD not found\n");
+            fputs("cd: OLDPWD not found\n", stderr);
             return;
         }
     }
@@ -35,7 +35,7 @@ void shell_cd(char **args)
         return;
     }
 
-    if (setenv("OLDPWD", _getenv("PWD"), 1) != 0)
+    if (setenv("OLDPWD", getenv("PWD"), 1) != 0)
     {
         perror("setenv");
         return;
@@ -47,3 +47,11 @@ void shell_cd(char **args)
         return;
     }
 }
+
+int main() {
+    char *args[] = {"cd", "example_directory", NULL};
+
+    shell_cd(args);
+    return 0;
+}
+

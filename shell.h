@@ -62,4 +62,9 @@ void free_path(void);
 /* get_input.c */
 char *get_input(void);
 
+/* exit.c */
+char *_strncpy(char *dest, char *src, int n);
+char *_strncat(char *dest, char *src, int n);
+char *_strchr(char *s, char c);
+
 #endif

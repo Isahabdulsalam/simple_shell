@@ -39,17 +39,3 @@ char *get_input(void)
 
     return (buffer);
 }
-
-int main(void)
-{
-    char *input;
-
-    input = get_input();
-
-
-    printf("You entered: %s\n", input);
-
-    free(input);
-
-    return (0);
-}

@@ -47,11 +47,3 @@ void shell_cd(char **args)
         return;
     }
 }
-
-int main() {
-    char *args[] = {"cd", "example_directory", NULL};
-
-    shell_cd(args);
-    return 0;
-}
-

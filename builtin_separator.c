@@ -10,7 +10,10 @@
 
 #define COMMAND_LENGTH 100
 #define ARGUMENT 10
-
+/**
+ * exe_com - execute command
+ * @com: parameter
+ */
 void exe_com(char *com)
 {
     char *arg[ARGUMENT];

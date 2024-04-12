@@ -7,7 +7,7 @@
 #define MAX_ALIAS_LENGTH 50
 /**
  * replace_variables - replace variables
- * exe_com - function to exec7te command
+ * @input: the integer
  */
 void replace_variables(char *input)
 {

@@ -5,7 +5,10 @@
 #define MAX_ARGUMENTS 10
 #define MAX_ALIASES 50
 #define MAX_ALIAS_LENGTH 50
-
+/**
+ * replace_variables - replace variables
+ * exe_com - function to exec7te command
+ */
 void replace_variables(char *input)
 {
 	char pid[20];
@@ -20,6 +23,7 @@ void replace_variables(char *input)
 		memmove(pos + strlen(pid), pos + 2, strlen(pos + 2) + 1);
 		memcpy(pos, pid, strlen(pid));
 	}
+
 	sprintf(exit_status, "%d", last_command);
 	pos = strstr(input, "$?");
 
@@ -29,4 +33,3 @@ void replace_variables(char *input)
 		memcpy(pos, exit_status, strlen(exit_status));
 	}
 }
-

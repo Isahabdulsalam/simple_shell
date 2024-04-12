@@ -12,9 +12,10 @@ void replace_variables(char *input)
 	int last_command = 0;
 	char exit_status[20];
 	char *pos = strstr(input, "$$");
+
 	sprintf(pid, "%d", getpid());
 
-	if (pos != NULL) 
+	if (pos != NULL)
 	{
 		memmove(pos + strlen(pid), pos + 2, strlen(pos + 2) + 1);
 		memcpy(pos, pid, strlen(pid));
@@ -22,7 +23,8 @@ void replace_variables(char *input)
 	sprintf(exit_status, "%d", last_command);
 	pos = strstr(input, "$?");
 
-	if (pos != NULL) {
+	if (pos != NULL)
+	{
 		memmove(pos + strlen(exit_status), pos + 2, strlen(pos + 2) + 1);
 		memcpy(pos, exit_status, strlen(exit_status));
 	}

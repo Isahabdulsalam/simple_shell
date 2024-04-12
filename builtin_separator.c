@@ -45,6 +45,7 @@ void exe_com(char *com)
 	else
 	{
 		int list;
+
 		waitpid(-1, &list, 0);
 	}
 }

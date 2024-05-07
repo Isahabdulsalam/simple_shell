@@ -1,8 +1,4 @@
 #include "shell.h"
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/wait.h>
 
 int main(void) {
     char line[MAX_LINE_LENGTH];

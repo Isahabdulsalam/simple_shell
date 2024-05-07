@@ -1,7 +1,6 @@
 #include "shell.h"
-#include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 #include <sys/wait.h>
 
@@ -18,9 +17,10 @@ int main(void) {
             break;
         } else if (strcmp(line, "env") == 0) {
             extern char **environ;
-            char **env;
-            for (env = environ; *env != NULL; env++) {
+            char **env = environ;
+            while (*env != NULL) {
                 printf("%s\n", *env);
+                env++;
             }
         } else {
             if (execute_command(line) == -1) {
@@ -36,25 +36,21 @@ void print_prompt(void) {
 }
 
 int execute_command(char *line) {
-    pid_t pid = fork();
+    pid_t pid;
+    int status;
+    
+    pid = fork();
     if (pid == -1) {
         perror("fork");
         return -1;
     } else if (pid == 0) {
-        execlp(line, line, NULL);
-        perror("execlp");
-        exit(EXIT_FAILURE);
+        if (execlp(line, line, NULL) == -1) {
+            perror("execlp");
+            return -1;
+        }
     } else {
-        int status;
-        if (waitpid(pid, &status, 0) == -1) {
-            perror("waitpid");
-            return -1;
-        }
-        if (WIFEXITED(status)) {
-            return 0;
-        } else {
-            return -1;
-        }
+        waitpid(pid, &status, 0);
     }
+    return 0;
 }
 

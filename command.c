@@ -32,7 +32,7 @@ int main(void) {
 }
 
 void print_prompt(void) {
-    printf("#cisfun$ ");
+    printf("simple_shell$ ");
 }
 
 int execute_command(char *line) {
